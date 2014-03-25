@@ -8,11 +8,15 @@
     <%
          session.setAttribute("SessionKey","SessionKeyValue Set at "+new java.util.Date());
          System.out.println("\n\t index.jsp setAttribute() called on Session with value = "+(String)session.getAttribute("SessionKey"));
+         String hostName=request.getServerName();
+			String serverIP = request.getLocalAddr();
     %>
 
    <h2>Attribute "SessionKey" is set in the HttpSession</h2>
     session.getAttribute("SessionKey") = <%=session.getAttribute("SessionKey") %>   
-    <BR>       <BR>
+	<BR><BR>
+    Serving this request is HOST / IP = <%=hostName%> / <%=serverIP%>
+   <BR><BR>
     session.getId() = <%=session.getId() %>  
    <BR> <BR> 
    <a href="sessionCheck.jsp">Click Here to move to nextPage sessionCheck.jsp</a>
